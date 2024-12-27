@@ -24,11 +24,11 @@ This module abstracts the library zxing-android-embedded, developed by JourneyAp
 
 ## Getting started
 
-`$ npm install react-native-barcode-zxing-scan --save`
+`$ npm install rn-barcode-zxing-scan --save`
 
 ## Mostly automatic installation
 
-`$ react-native link react-native-barcode-zxing-scan`
+`$ react-native link rn-barcode-zxing-scan`
 
 ## Manual installation
 
