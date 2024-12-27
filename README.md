@@ -1,4 +1,6 @@
-# react-native-barcode-zxing-scan
+# rn-barcode-zxing-scan
+
+A fork of react-native-barcode-zxing-scan, since the original wasn't returning anything and the documentation was wrong. Fixed both here.
 
 The zxing module scanning barcodes in android.
 
@@ -20,37 +22,38 @@ This module abstracts the library zxing-android-embedded, developed by JourneyAp
 - DATA MATRIX
 - PDF 417
 
-
 ## Getting started
 
-```$ npm install react-native-barcode-zxing-scan --save```
+`$ npm install react-native-barcode-zxing-scan --save`
 
 ## Mostly automatic installation
 
-```$ react-native link react-native-barcode-zxing-scan```
+`$ react-native link react-native-barcode-zxing-scan`
 
-## Manual installation 
+## Manual installation
 
 Android
-Update rn to 0.60.* and use autolink
+Update rn to 0.60.\* and use autolink
 
-## Usage 
+## Usage
 
-#### App.js 
+#### App.js
 
 ```
 import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
-import BarcodeZxingScan from "react-native-barcode-zxing-scan";
+import BarcodeZxingScan from "rn-barcode-zxing-scan";
 
 const App = () => {
-  const barcodeScanned = (data) => {
-    console.log("Barcode ", data);
-  };
 
   const handleClick = () => {
-    BarcodeZxingScan.showQrReader(barcodeScanned);
-  };
+    BarcodeZxingScan.showQrReader((error, data) => {
+      if (error) {
+        console.error('Error:', error);
+      } else {
+        console.log('Barcode:', data);
+      }
+    };
 
   return (
     <View>
